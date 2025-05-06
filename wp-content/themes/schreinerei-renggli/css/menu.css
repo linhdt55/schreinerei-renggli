@@ -1,0 +1,50 @@
+/* ========================
+   Menu Style
+=========================== */
+
+
+/* Navigation menu */
+.main-navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation a {
+  text-decoration: none;
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 22px;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  outline: 1px solid transparent;
+}
+
+.main-navigation li.active a,
+.main-navigation li:hover a {
+  background-color: #FFE346;
+  outline-color: #fff;
+}
+
+/* Action Button */
+.header-action-button a.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #331907;
+  border-radius: 22px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  transition: all 0.3s ease;
+}
+
+.header-action-button a.btn:hover {
+  border-color: #013473;
+  color: #013473;
+}

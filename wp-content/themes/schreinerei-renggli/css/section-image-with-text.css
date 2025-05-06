@@ -1,0 +1,43 @@
+.highlight-section {
+    background-color: #f9f5ec;
+    padding-bottom: 113px;
+}
+.highlight-wrapper {
+    display: flex;
+    border: 10px solid #fff;
+    border-radius: 24px;
+    background-color: #FFE346;
+}
+
+.highlight-image {
+    flex: 1 1 50%;
+    border-radius: 16px 0 0 16px;
+    overflow: hidden;
+}
+
+.highlight-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.highlight-text {
+    flex: 1 1 50%;
+    background-color: #FFE346;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  
+    text-align: center;
+    border-radius: 0 16px 16px 0;
+    overflow: hidden;
+}
+
+.highlight-text h2 {
+    font-size: 40px;
+    line-height: 53px;
+    font-weight: 400;
+    color: #331907;
+    font-family: "National Park", sans-serif;
+}

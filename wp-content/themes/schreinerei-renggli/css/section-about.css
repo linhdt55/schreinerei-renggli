@@ -1,0 +1,62 @@
+/* ========================
+   About Style
+=========================== */
+
+.page_about_container {
+    padding: 108px 0 90px;
+    background-color: #331907;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-title {
+    color: #FFFFFF;
+    font-size: 40px;
+    line-height: 53px;
+    font-family: "National Park", sans-serif;
+}
+
+.aboutS-content p {
+    font-size: 26px;
+    line-height: 39px;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.page_about_container.has-title .section-title {
+    flex: 0 0 26.3%;
+    max-width: 26.3%;
+    margin: 0;
+}
+
+.page_about_container.has-title .aboutS-content {
+    flex: 0 0 73.7%;
+    max-width: 73.7%;
+}
+
+.page_about_container.no-title .aboutS-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.section-content {
+    margin-bottom: 40px;
+}
+
+.aboutS-content .section-button {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 23px;
+    color: #FFFFFF;
+    outline: 1px solid #F3EEE3;
+    padding: 9px;
+    border-radius: 22px;
+}
+.aboutS-content .section-button:hover {
+    background-color: #FFE346;
+    outline-color: #fff;
+    color: #000;
+}

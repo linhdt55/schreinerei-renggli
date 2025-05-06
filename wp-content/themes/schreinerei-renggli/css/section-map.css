@@ -1,0 +1,108 @@
+.section-maps {
+    padding: 60px 0;
+  }
+  
+  .map-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .map-text {
+    flex: 1 1 40%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .map-text .company-name {
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .opening-hours strong {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+  
+  .map-image {
+    flex: 1 1 50%;
+  }
+  
+  .map-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+
+
+
+
+  /* Container chung cho form */
+.section-contact-form {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  /* Title */
+  .section-contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #2d0b00;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Các ô input */
+  .wpcf7 input[type="text"],
+  .wpcf7 input[type="email"],
+  .wpcf7 textarea,
+  .wpcf7 input[type="tel"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #aaa;
+    border-radius: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Chia hàng cho số điện thoại & email */
+  .contact-row {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .contact-row > div {
+    flex: 1;
+  }
+  
+  /* Textarea */
+  .wpcf7 textarea {
+    min-height: 160px;
+    resize: vertical;
+  }
+  
+  /* Button */
+  .wpcf7 input[type="submit"] {
+    background-color: #f9cd2f;
+    border: 1px solid #000;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .wpcf7 input[type="submit"]:hover {
+    background-color: #f1bd00;
+  }
+  

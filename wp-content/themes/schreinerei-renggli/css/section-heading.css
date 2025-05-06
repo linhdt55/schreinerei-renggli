@@ -1,0 +1,11 @@
+
+.section-heading {
+    padding: 136px 0 187px;
+}
+
+.section-heading__content p {
+    font-size: 26px;
+    line-height: 39px;
+    text-align: center;
+    color: #000000;
+}

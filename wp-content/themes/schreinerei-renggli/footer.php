@@ -1,41 +1,91 @@
+<?php
+// Get ACF fields from Options Page
+$footer_logo     = get_field('footer_company_logo', 'option');
+$footer_hours    = get_field('footer_opening_hours', 'option');
+$footer_partners = get_field('footer_partner_logos', 'option');
+$footer_credits  = get_field('footer_credits_links', 'option');
+?>
+
 <footer class="site-footer">
-    <div class="footer-brand">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Basler Schreiner">
-    </div>
+  <div class="footer-top container">
 
-    <div class="footer-top container">
-        <div class="footer-contact">
-            <h4>Renggli Schreinerei AG</h4>
-            <p>Walkeweg 71<br>CH-4052 Basel</p>
-            <p>Telefon 061 373 37 80</p>
-        </div>
+    <!-- Company Logo -->
+    <?php if ($footer_logo): ?>
+      <div class="footer-logo">
+        <img src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['alt']); ?>">
+      </div>
+    <?php endif; ?>
 
-        <div class="footer-hours">
-            <h4>Öffnungszeiten</h4>
-            <p>Montag bis Donnerstag<br>08.00 – 12.00 und 13.00 – 17.00 Uhr</p>
-            <p>Freitag<br>08.00 – 12.00 und 13.00 – 16.00 Uhr</p>
-        </div>
-    </div>
-
-    <div class="footer-logos container">
-        <p>Logo 1</p>
-        <p>Logo 2</p>
-        <p>Logo 3</p>
-        <p>Logo 4</p>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="footer-copyright">
-                <p>© 2024 Renggli Schreinerei AG</p>
-                <p><a href="#">Impressum</a> | <a href="#">Datenschutzerklärung</a></p>
-                <p class="credit">webdesign with 💛 by projektvenice</p>
+    <!-- Info & Opening Hours -->
+    <div class="footer-info">
+      <?php if (!empty($footer_hours)): ?>
+          <?php foreach ($footer_hours as $hour): ?>
+            <div class="opening-hours">
+                <?php if (!empty($hour['opening_hours_title'])): ?>
+                <h4><?php echo esc_html($hour['opening_hours_title']); ?></h4>
+                <?php endif; ?>
+                <?php if (!empty($hour['opening_days'])): ?>
+                <div class="hours"><?php echo wp_kses_post($hour['opening_days']); ?></div>
+                <?php endif; ?>
             </div>
-        </div>
+          <?php endforeach; ?>
+      <?php endif; ?>
     </div>
-</footer>
 
+    <!-- Partner Logos -->
+    <?php if (!empty($footer_partners)): ?>
+      <div class="footer-partners">
+        <ul class="partners">
+          <?php foreach ($footer_partners as $partner): ?>
+            <?php $logo = $partner['partner_logo']; $link = $partner['partner_link']; ?>
+            <li>
+              <?php if ($link): ?>
+                <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target'] ?? '_self'); ?>">
+                  <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+                </a>
+              <?php else: ?>
+                <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>">
+              <?php endif; ?>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <?php if (!empty($footer_credits)): ?>
+        <div class="credits-text">
+          <!-- Copyright -->
+          <?php if (!empty($footer_credits['copyright_text'])): ?>
+            <span><?php echo esc_html($footer_credits['copyright_text']); ?></span>
+          <?php endif; ?>
+
+          <!-- Links -->
+          <span class="links">
+            <?php if (!empty($footer_credits['impressum'])): ?>
+              <a href="<?php echo esc_url($footer_credits['impressum']['url']); ?>" target="<?php echo esc_attr($footer_credits['impressum']['target'] ?? '_self'); ?>">
+                <?php echo esc_html($footer_credits['impressum']['title']); ?>
+              </a>
+            <?php endif; ?>
+            <?php if (!empty($footer_credits['privacy_policy'])): ?>
+              | <a href="<?php echo esc_url($footer_credits['privacy_policy']['url']); ?>" target="<?php echo esc_attr($footer_credits['privacy_policy']['target'] ?? '_self'); ?>">
+                <?php echo esc_html($footer_credits['privacy_policy']['title']); ?>
+              </a>
+            <?php endif; ?>
+          </span>
+
+          <!-- Webdesign -->
+          <?php if (!empty($footer_credits['webdesign_text'])): ?>
+            <span class="webdesign"><?php echo wp_kses_post($footer_credits['webdesign_text']); ?></span>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</footer>
 <?php wp_footer(); ?>
 </body>
-
 </html>

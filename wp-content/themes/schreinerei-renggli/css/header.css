@@ -1,0 +1,26 @@
+/* ========================
+   Header Style
+=========================== */
+
+.site-header {
+  background-color: #f9f5ec;
+  padding: 17px 0 48px;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.header-logo img {
+  max-height: 84px;
+  height: auto;
+  width: auto;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 110px;
+}

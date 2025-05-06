@@ -1,0 +1,63 @@
+/* ========================
+   Slide Style
+=========================== */
+.page_slideshows_container {
+    background-color: #f9f5ec;
+    padding-bottom: 75px;
+}
+
+.slideContainer {
+    max-width: 1555px;
+    margin: auto;
+}
+
+.slideshow-wrapper {
+    border-radius: 24px;
+    border: 10px solid #fff;
+    overflow: hidden;
+}
+
+.page_slideshows_container img {
+    max-height: 624px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    margin-top: 30px;
+    max-width: 1072px;
+    padding-left: 141px;
+}
+
+.slide-caption {
+    color: #985113;
+    font-size: 20px;
+    line-height: 27px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.slide-title {
+    color: #331907;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 67px;
+    font-family: "National Park", sans-serif;
+    margin: 20px 0 0;
+}
+
+.slideshow-wrapper {
+    position: relative;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 60px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 0;
+    opacity: 1;
+}
+
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #FFE346;
+}

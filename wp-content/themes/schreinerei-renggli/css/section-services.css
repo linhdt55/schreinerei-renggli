@@ -1,0 +1,84 @@
+.section-services {
+    padding: 92px 57px;
+    text-align: center;
+    background-color: #fff;
+    color: #321700;
+}
+
+.section-services .section-title {
+    font-size: 40px;
+    line-height: 53px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    font-family: "National Park", sans-serif;
+    color: #331907;
+}
+
+.section-services .section-description {
+    max-width: 1273px;
+    margin: 0 auto 40px;
+    font-size: 20px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.section-services .section-button {
+    margin-bottom: 50px;
+}
+
+.section-services .section-button .btn {
+    background-color: transparent;
+    outline: 1px solid #331907;
+    padding: 10px;
+    border-radius: 22px;
+    color: #321700;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.section-services .section-button .btn:hover {
+    background-color: #FFE346;
+    outline-color: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.service-box {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 9px solid #fff;
+    background: #fff;
+    transition:  all .3s;
+}
+
+.service-box:hover {
+    background: #FFFAEF;
+    border-color: #FFFAEF;
+}
+
+.service-box:hover .service-title {
+    font-weight: 700;
+}
+
+.service-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+}
+
+.service-title {
+    padding-top: 13px;
+    padding-bottom: 27px;
+    font-size: 19px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #000000;
+    transition:  all .3s;
+}
