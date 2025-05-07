@@ -2,6 +2,7 @@
     background-image: url("../assets/background-header.png");
     background-repeat: repeat;
     padding-bottom: 113px;
+    padding-top: 25px;
 }
 .highlight-wrapper {
     display: flex;

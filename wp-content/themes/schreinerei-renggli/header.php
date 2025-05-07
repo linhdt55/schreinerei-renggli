@@ -11,23 +11,25 @@
 <body <?php body_class(); ?>>
 
     <?php
-// Get all header fields from ACF Options Page
-$header_logo         = get_field('header_logo', 'option');
-$navigation_settings = get_field('navigation_settings', 'option');
-$action_button       = get_field('action_button', 'option');
-?>
+    // Get all header fields from ACF Options Page
+    $header_logo         = get_field('header_logo', 'option');
+    $navigation_settings = get_field('navigation_settings', 'option');
+    $action_button       = get_field('action_button', 'option');
+    $current_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+    ?>
 
     <header class="site-header">
         <div class="container">
             <div class="header-inner">
                 <!-- Logo Section -->
                 <?php if ($header_logo): ?>
-                <div class="header-logo">
-                    <a href="<?php echo home_url(); ?>">
-                        <img src="<?php echo esc_url($header_logo['url']); ?>"
-                            alt="<?php echo esc_attr($header_logo['alt']); ?>">
-                    </a>
-                </div>
+                    <div class="header-logo">
+                        <a href="<?php echo home_url(); ?>">
+                            <img src="<?php echo esc_url($header_logo['url']); ?>"
+                                alt="<?php echo esc_attr($header_logo['alt']); ?>">
+                        </a>
+                    </div>
                 <?php endif; ?>
                 <div class="header-right">
                     <div class="nav-button-mobile">
@@ -39,34 +41,36 @@ $action_button       = get_field('action_button', 'option');
                     </div>
                     <!-- Navigation Menu -->
                     <?php if ($navigation_settings): ?>
-                    <nav class="main-navigation">
-                        <ul>
-                            <?php foreach ($navigation_settings as $item): ?>
-                            <?php 
-                    $link = $item['menu_title']; // This is a Link field
-                    if ($link): 
-                ?>
-                            <li>
-                                <a href="<?php echo esc_url($link['url']); ?>" <?php if (!empty($link['target'])): ?>
-                                    target="<?php echo esc_attr($link['target']); ?>" <?php endif; ?>>
-                                    <?php echo esc_html($link['title']); ?>
-                                </a>
-                            </li>
-                            <?php endif; ?>
-                            <?php endforeach; ?>
-                        </ul>
-                    </nav>
+                        <nav class="main-navigation">
+                            <ul>
+                                <?php foreach ($navigation_settings as $item): ?>
+                                    <?php
+                                    $link = $item['menu_title'];
+                                    if ($link):
+                                        $menu_path = parse_url($link['url'], PHP_URL_PATH);
+                                        $is_active = untrailingslashit($current_path) === untrailingslashit($menu_path);
+                                    ?>
+                                        <li>
+                                            <a href="<?php echo esc_url($link['url']); ?>"  class="<?php echo $is_active ? 'active' : ''; ?>" <?php if (!empty($link['target'])): ?>
+                                                target="<?php echo esc_attr($link['target']); ?>" <?php endif; ?>>
+                                                <?php echo esc_html($link['title']); ?>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </ul>
+                        </nav>
                     <?php endif; ?>
 
                     <!-- Action Button -->
                     <?php if ($action_button): ?>
-                    <div class="header-action-button">
-                        <a href="<?php echo esc_url($action_button['url']); ?>" class="btn"
-                            <?php if (!empty($action_button['target'])): ?>
-                            target="<?php echo esc_attr($action_button['target']); ?>" <?php endif; ?>>
-                            <?php echo esc_html($action_button['title']); ?>
-                        </a>
-                    </div>
+                        <div class="header-action-button">
+                            <a href="<?php echo esc_url($action_button['url']); ?>" class="btn"
+                                <?php if (!empty($action_button['target'])): ?>
+                                target="<?php echo esc_attr($action_button['target']); ?>" <?php endif; ?>>
+                                <?php echo esc_html($action_button['title']); ?>
+                            </a>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>

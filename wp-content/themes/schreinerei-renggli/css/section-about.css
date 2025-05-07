@@ -18,6 +18,7 @@
     font-size: 40px;
     line-height: 53px;
     font-family: "National Park", sans-serif;
+    font-weight: 400;
 }
 
 .aboutS-content p {
@@ -44,7 +45,10 @@
 }
 
 .section-content {
-    margin-bottom: 40px;
+    margin-bottom: 41px;
+}
+.section-content p + p {
+    margin-top: 30px;
 }
 
 .aboutS-content .section-button {
@@ -56,6 +60,7 @@
     padding: 9px;
     border-radius: 22px;
 }
+
 .aboutS-content .section-button:hover {
     background-color: #FFE346;
     outline-color: #fff;

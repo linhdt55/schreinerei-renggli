@@ -6,7 +6,7 @@
   color: #222;
   font-size: 14px;
   line-height: 1.6;
-  padding-top: 40px;
+  padding-top: 69px;
   background-image: url("../assets/background-footer.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,6 +98,7 @@
   text-align: center;
 }
 
+.footer-bottom .credits-text span,
 .footer-bottom .credits-text .links a,
 .footer-bottom .credits-text .webdesign p,
 .footer-bottom .credits-text .webdesign a {

@@ -24,7 +24,7 @@
   outline: 1px solid transparent;
 }
 
-.main-navigation li.active a,
+.main-navigation li a.active,
 .main-navigation li:hover a {
   background-color: #FFE346;
   outline-color: #fff;

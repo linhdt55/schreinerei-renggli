@@ -1,7 +1,7 @@
 .company-tabs.vertical-tabs {
     display: flex;
     gap: 48px;
-    margin-bottom: 167px;
+    margin-bottom: 168px;
 }
 
 .vertical-tabs__left {
@@ -27,6 +27,7 @@
     position: absolute;
     height: 100%;
     z-index: -1;
+    max-height: 910px;
 }
 
 .vertical-tabs__nav {
@@ -92,6 +93,13 @@
     color: #331907;
     font-family: "National Park", sans-serif;
     margin: 0 0 45px;
+    font-weight: 500;
+}
+
+.company-tabs__left_img img {
+    max-width: 382px;
+    max-height: 255px;
+    object-fit: cover;
 }
 
 .tab-description {
@@ -103,7 +111,7 @@
     font-size: 20px;
     line-height: 27px;
     color: #000000;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .tab-description p {
@@ -149,6 +157,14 @@
     opacity: 0.75;
     padding: 17px 21px;
     width: 100%;
+    min-height: 114px;
+}
+
+.member-card .member_role p {
+    font-size: 20px;
+    line-height: 27px;
+    font-weight: 300;
+    color: #000000;
 }
 
 .member_role p + p {
