@@ -78,3 +78,19 @@
         max-width: 100%;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .page_about_container {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+    .aboutS-content p {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}

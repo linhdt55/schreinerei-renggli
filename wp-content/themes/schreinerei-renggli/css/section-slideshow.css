@@ -69,3 +69,15 @@
         padding-left: 0;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .slide-caption {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    
+    .slide-title {
+        font-size: 38px;
+        line-height: 48px;
+    }
+}

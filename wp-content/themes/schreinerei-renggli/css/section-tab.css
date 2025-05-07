@@ -214,3 +214,15 @@
         gap: 30px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .company-tabs__right h3 {
+        font-size: 38px;
+        line-height: 48px;
+    }
+
+    .tab-description ul li, .tab-description p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
