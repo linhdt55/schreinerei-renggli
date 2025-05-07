@@ -125,27 +125,28 @@ get_header();
                         <div class="map-content-wrapper">
                             <div class="map-text">
                                 <?php if (!empty($company_name)): ?>
-                                    <strong><?php echo esc_html($company_name); ?></strong>
+                                    <h3 class="company-name"><?php echo esc_html($company_name); ?></h3>
                                 <?php endif; ?>
+                                <div class="address">
+                                    <?php if (!empty($address_line_1)): ?>
+                                        <p><?php echo esc_html($address_line_1); ?></p>
+                                    <?php endif; ?>
 
-                                <?php if (!empty($address_line_1)): ?>
-                                    <p><?php echo esc_html($address_line_1); ?></p>
-                                <?php endif; ?>
+                                    <?php if (!empty($address_line_2)): ?>
+                                        <p><?php echo esc_html($address_line_2); ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="phone">
+                                    <?php if (!empty($phone_number)): ?>
+                                        <p>Telefon: <?php echo esc_html($phone_number); ?></p>
+                                    <?php endif; ?>
 
-                                <?php if (!empty($address_line_2)): ?>
-                                    <p><?php echo esc_html($address_line_2); ?></p>
-                                <?php endif; ?>
-
-                                <?php if (!empty($phone_number)): ?>
-                                    <p>Telefon: <?php echo esc_html($phone_number); ?></p>
-                                <?php endif; ?>
-
-                                <?php if (!empty($email_address)): ?>
-                                    <p><?php echo esc_html($email_address); ?></p>
-                                <?php endif; ?>
-
+                                    <?php if (!empty($email_address)): ?>
+                                        <p><?php echo esc_html($email_address); ?></p>
+                                    <?php endif; ?>
+                                </div>
                                 <?php if (!empty($opening_hours)): ?>
-                                    <div class="opening-hours">
+                                    <div class="opening-hours-map">
                                         <?php echo wp_kses_post($opening_hours); ?>
                                     </div>
                                 <?php endif; ?>

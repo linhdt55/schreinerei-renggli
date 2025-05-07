@@ -3,8 +3,9 @@
 =========================== */
 
 .site-header {
-  background-color: #f9f5ec;
   padding: 17px 0 48px;
+  background-image: url("../assets/background-header.png");
+  background-repeat: repeat;
 }
 
 .header-inner {
@@ -23,4 +24,22 @@
   display: flex;
   align-items: center;
   gap: 110px;
+}
+
+
+@media screen and (max-width: 1180px) {
+  .header-right {
+    gap: 40px;
+  }
+
+  .header-logo img {
+    max-height: 60px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
 }

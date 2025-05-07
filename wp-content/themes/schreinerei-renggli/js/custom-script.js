@@ -1,27 +1,27 @@
 jQuery(document).ready(function ($) {
-   const $swiperImage = $('.swiper-image');
-   const $swiperContent = $('.swiper-content');
+    const $swiperImage = $('.swiper-image');
+    const $swiperContent = $('.swiper-content');
 
-   if ($swiperImage.length && $swiperContent.length) {
-       const swiperImage = new Swiper('.swiper-image', {
-           loop: true,
-           pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-         }
-       });
+    if ($swiperImage.length && $swiperContent.length) {
+        const swiperImage = new Swiper('.swiper-image', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            }
+        });
 
-       const swiperContent = new Swiper('.swiper-content', {
-           loop: true,
-       });
+        const swiperContent = new Swiper('.swiper-content', {
+            loop: true,
+        });
 
-       swiperImage.controller.control = swiperContent;
-       swiperContent.controller.control = swiperImage;
-   } else {
-       console.warn('Swiper containers not found');
-   }
+        swiperImage.controller.control = swiperContent;
+        swiperContent.controller.control = swiperImage;
+    } else {
+        console.warn('Swiper containers not found');
+    }
 
-   const tabHeaders = document.querySelectorAll('.vertical-tabs__nav li');
+    const tabHeaders = document.querySelectorAll('.vertical-tabs__nav li');
     const tabContents = document.querySelectorAll('.company-tabs__content');
 
     tabHeaders.forEach(header => {
@@ -50,5 +50,15 @@ jQuery(document).ready(function ($) {
             }
         });
     });
-  
+
+
+    const navToggle = document.querySelector(".nav-button-mobile");
+    const mainNav = document.querySelector(".main-navigation");
+
+    if (navToggle && mainNav) {
+        navToggle.addEventListener("click", function () {
+            mainNav.classList.toggle("open");
+            navToggle.classList.toggle("active");
+        });
+    }
 });

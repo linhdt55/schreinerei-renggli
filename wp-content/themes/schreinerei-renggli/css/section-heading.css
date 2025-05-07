@@ -9,3 +9,9 @@
     text-align: center;
     color: #000000;
 }
+
+@media screen and (max-width: 992px) {
+    .section-heading {
+        padding: 40px 0;
+    }
+}

@@ -82,3 +82,21 @@
     color: #000000;
     transition:  all .3s;
 }
+
+@media screen and (max-width: 1180px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section-services {
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .services-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

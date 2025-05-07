@@ -2,13 +2,15 @@
    Slide Style
 =========================== */
 .page_slideshows_container {
-    background-color: #f9f5ec;
+    background-image: url("../assets/background-header.png");
+    background-repeat: repeat;
     padding-bottom: 75px;
 }
 
 .slideContainer {
-    max-width: 1555px;
+    max-width: 1595px;
     margin: auto;
+    padding: 0 20px;
 }
 
 .slideshow-wrapper {
@@ -60,4 +62,10 @@
 
 .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #FFE346;
+}
+
+@media screen and (max-width: 1180px) {
+    .slide-content {
+        padding-left: 0;
+    }
 }

@@ -4,6 +4,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schreinerei Renggli</title>
     <?php wp_head(); ?>
 </head>
 
@@ -29,6 +30,13 @@ $action_button       = get_field('action_button', 'option');
                 </div>
                 <?php endif; ?>
                 <div class="header-right">
+                    <div class="nav-button-mobile">
+                        <div class="nav-bar">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
                     <!-- Navigation Menu -->
                     <?php if ($navigation_settings): ?>
                     <nav class="main-navigation">

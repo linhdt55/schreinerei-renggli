@@ -1,5 +1,6 @@
 .highlight-section {
-    background-color: #f9f5ec;
+    background-image: url("../assets/background-header.png");
+    background-repeat: repeat;
     padding-bottom: 113px;
 }
 .highlight-wrapper {
@@ -17,7 +18,8 @@
 
 .highlight-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
@@ -40,4 +42,29 @@
     font-weight: 400;
     color: #331907;
     font-family: "National Park", sans-serif;
+}
+
+@media screen and (max-width: 992px) {
+    .highlight-text h2 {
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    .highlight-section {
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .highlight-wrapper {
+        flex-direction: column;
+    }
+
+    .highlight-image {
+        border-radius: 16px 16px 0 0;
+    }
+
+    .highlight-text {
+        border-radius: 0 0 16px 16px;
+    }
 }

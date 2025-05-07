@@ -10,6 +10,7 @@
 .about-section {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .section-title {
@@ -59,4 +60,16 @@
     background-color: #FFE346;
     outline-color: #fff;
     color: #000;
+}
+
+@media screen and (max-width: 1180px) {
+    .about-section {
+        flex-direction: column;
+    }
+
+    .page_about_container.has-title .section-title,
+    .page_about_container.has-title .aboutS-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }

@@ -167,3 +167,34 @@
         transform: translateY(0);
     }
 }
+
+@media screen and (max-width: 992px) {
+    .company-tabs.vertical-tabs {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .vertical-tabs__left {
+        width: 100%;
+        flex: 0 0 100%;
+        justify-content: left;
+        padding-top: 40px;
+    }
+    .vertical-tabs__nav {
+        display: flex;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .vertical-tabs__nav::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .vertical-tabs__nav li.active {
+        border-radius: 24px 24px 0 0;
+    }
+
+    .company-tabs__left {
+        gap: 30px;
+    }
+}
