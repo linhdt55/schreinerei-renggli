@@ -28,7 +28,7 @@ get_header();
                             <?php endif; ?>
                             <?php if (!empty($row['highlight_title'])): ?>
                                 <div class="highlight-text">
-                                    <h2><?php echo esc_html($row['highlight_title']); ?></h2>
+                                    <h2><?php echo $row['highlight_title']; ?></h2>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -48,7 +48,7 @@ get_header();
             <?php endif; ?>
 
             <?php if ($row['acf_fc_layout'] === 'company_tabs_section'):
-                $tab_id = 'tab-' . $tab_index;
+                $tab_id = 'tab_' . $tab_index;
 
                 // HEADER
                 $tab_headers[] = sprintf(
@@ -93,13 +93,26 @@ get_header();
                         <div class="tab-members">
                             <?php foreach ($row['tab_members'] as $member): ?>
                                 <div class="member-card">
+                                    <?php
+                                    $has_name = !empty($member['name']);
+                                    $has_role = !empty($member['role']);
+                                    $image_class = (!$has_name && !$has_role) ? 'image-no-name' : '';
+                                    ?>
                                     <?php if (!empty($member['image'])): ?>
-                                        <img src="<?php echo esc_url($member['image']['url']); ?>" alt="<?php echo esc_attr($member['image']['alt']); ?>">
+                                        <img
+                                            src="<?php echo esc_url($member['image']['url']); ?>"
+                                            alt="<?php echo esc_attr($member['image']['alt']); ?>"
+                                            class="<?php echo esc_attr($image_class); ?>">
                                     <?php endif; ?>
-                                    <div class="member-info">
-                                        <strong><?php echo esc_html($member['name']); ?></strong>
-                                        <div class="member_role"><?php echo ($member['role']); ?></div>
-                                    </div>
+
+                                    <?php if ($has_name): ?>
+                                        <div class="member-info">
+                                            <strong><?php echo ($member['name']); ?></strong>
+                                            <?php if ($has_role): ?>
+                                                <div class="member_role"><?php echo $member['role']; ?></div>
+                                            <?php endif; ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             <?php endforeach; ?>
                         </div>

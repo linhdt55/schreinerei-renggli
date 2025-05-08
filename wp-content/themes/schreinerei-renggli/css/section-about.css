@@ -18,14 +18,14 @@
     font-size: 40px;
     line-height: 53px;
     font-family: "National Park", sans-serif;
-    font-weight: 400;
+    font-weight: 300;;
 }
 
 .aboutS-content p {
     font-size: 26px;
     line-height: 39px;
     color: #FFFFFF;
-    font-weight: 400;
+    font-weight: 300;;
 }
 
 .page_about_container.has-title .section-title {
@@ -57,7 +57,7 @@
     line-height: 23px;
     color: #FFFFFF;
     outline: 1px solid #F3EEE3;
-    padding: 9px;
+    padding: 9px 16px;
     border-radius: 22px;
 }
 

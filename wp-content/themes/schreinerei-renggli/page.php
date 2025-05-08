@@ -42,7 +42,7 @@ $section = get_field('section_services');
                                             <?php endif; ?>
 
                                             <?php if ($title = get_sub_field('slide_title')): ?>
-                                                <h2 class="slide-title"><?php echo esc_html($title); ?></h2>
+                                                <h2 class="slide-title"><?php echo $title ?></h2>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -117,11 +117,13 @@ $section = get_field('section_services');
                     <div class="services-grid">
                         <?php foreach ($services as $service): 
                             $image = $service['service_image'];
-                            $link = $service['service_title']; // Đây là link
+                            $link = $service['service_title'];
+                            $tabID = $service['tab_id'];
+                            $full_url = esc_url($link['url']) . '#' . esc_attr($tabID);
                         ?>
                         <div class="service-box">
                             <?php if (!empty($link) && !empty($image)): ?>
-                                <a href="<?php echo esc_url($link['url']); ?>" target="<?php echo esc_attr($link['target'] ?? '_self'); ?>">
+                                <a href="<?php echo $full_url; ?>" target="<?php echo esc_attr($link['target'] ?? '_self'); ?>">
                                     <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
                                     <div class="service-title"><?php echo esc_html($link['title']); ?></div>
                                 </a>
@@ -130,7 +132,6 @@ $section = get_field('section_services');
                         <?php endforeach; ?>
                     </div>
                 <?php endif; ?>
-
             </div>
         </section>
         <?php endif; ?>                                     

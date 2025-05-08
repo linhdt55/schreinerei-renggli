@@ -16,7 +16,7 @@
 }
 
 .map-text .company-name {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 26px;
     line-height: 39px;
     display: block;
@@ -30,7 +30,7 @@
     line-height: 39px;
     display: block;
     margin: 0;
-    font-weight: 400;
+    font-weight: 300;;
     color: #000000;
 }
 
@@ -41,7 +41,7 @@
 .opening-hours-map strong {
     display: block;
     margin-top: 30px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 26px;
     line-height: 39px;
     display: block;
@@ -56,7 +56,7 @@
     font-size: 26px;
     line-height: 39px;
     display: block;
-    font-weight: 400;
+    font-weight: 300;;
     color: #000000;
 }
 
@@ -69,6 +69,7 @@
     height: auto;
     border-radius: 12px;
     object-fit: cover;
+    max-width: 733px;
 }
 
 
@@ -126,6 +127,13 @@
     font-family: "National Park", sans-serif;
 }
 
+.wpcf7 input[type="text"]::placeholder,
+.wpcf7 input[type="email"]::placeholder,
+.wpcf7 textarea::placeholder,
+.wpcf7 input[type="tel"]::placeholder {
+    color: #9E9E9E;
+}
+
 .wpcf7 input[type="text"]:focus,
 .wpcf7 input[type="email"]:focus,
 .wpcf7 textarea:focus,
@@ -156,7 +164,7 @@
     font-size: 17px;
     cursor: pointer;
     line-height: 23px;
-    font-weight: 400;
+    font-weight: 300;;
     transition: background-color 0.3s ease;
     margin: 52px auto 0;
     width: 116px;
@@ -208,5 +216,14 @@
 
     .section-contact-form {
         padding-bottom: 60px;
+    }
+
+    .form-row {
+        gap: 0;
+    }
+    
+    .form-row p {
+        width: 100%;
+        flex: auto;
     }
 }

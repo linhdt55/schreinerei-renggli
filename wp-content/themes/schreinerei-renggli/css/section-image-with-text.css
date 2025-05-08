@@ -37,10 +37,10 @@
     overflow: hidden;
 }
 
-.highlight-text h2 {
+.highlight-text h2 p {
     font-size: 40px;
     line-height: 53px;
-    font-weight: 400;
+    font-weight: 300;;
     color: #331907;
     font-family: "National Park", sans-serif;
 }
@@ -57,6 +57,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .highlight-section {
+        padding-top: 0;
+    }
+    
     .highlight-wrapper {
         flex-direction: column;
     }
@@ -69,7 +73,7 @@
         border-radius: 0 0 16px 16px;
     }
 
-    .highlight-text h2 {
+    .highlight-text h2 p {
         font-size: 24px;
         line-height: 36px;
         margin: 0;

@@ -61,4 +61,24 @@ jQuery(document).ready(function ($) {
             navToggle.classList.toggle("active");
         });
     }
+
+    const hash = window.location.hash;
+    if (hash && hash.startsWith("#tab_")) {
+      const tabId = hash.substring(1);
+      const tabButton = document.querySelector(`.vertical-tabs__nav li[data-tab="${tabId}"]`);
+      const tabContent = document.getElementById(tabId);
+  
+      if (tabButton && tabContent) {
+        document.querySelectorAll('.vertical-tabs__nav li').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.company-tabs__content').forEach(el => el.classList.remove('active'));
+  
+        tabButton.classList.add('active');
+        tabContent.classList.add('active');
+        tabContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  
+        if (history.replaceState) {
+          history.replaceState(null, null, window.location.pathname);
+        }
+      }
+    }
 });

@@ -42,9 +42,18 @@
     padding: 24.5px 24px;
     cursor: pointer;
     transition: background 0.3s;
-    font-weight: 400;
+    font-weight: 300;;
     color: #000;
     border-radius: 24px 0px 0px 24px;
+}
+.vertical-tabs__nav li a{
+    font-weight: 300;;
+    color: #000;
+}
+
+.vertical-tabs__nav li:hover a {
+    font-weight: 700;
+    color: #000;
 }
 
 .vertical-tabs__nav li:hover {
@@ -59,6 +68,11 @@
     font-weight: 700;
     color: #000;
     border-radius: 24px 0px 0px 24px;
+}
+
+.vertical-tabs__nav li.active a {
+    font-weight: 700;
+    color: #000;
 }
 
 .vertical-tabs__right {
@@ -83,8 +97,7 @@
 .company-tabs__left {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 52px;
-    column-gap: 45px;
+    gap: 52px;
 }
 
 .company-tabs__right h3 {
@@ -93,7 +106,8 @@
     color: #331907;
     font-family: "National Park", sans-serif;
     margin: 0 0 45px;
-    font-weight: 500;
+    font-weight: 400;
+    max-width: 789px;
 }
 
 .company-tabs__left_img img {
@@ -128,6 +142,13 @@
 .member-card img {
     width: 100%;
     border-radius: 24px;
+}
+
+.member-card img.image-no-name {
+    border-radius: 0;
+    max-width: 382px;
+    max-height: 255px;
+    object-fit: cover;
 }
 
 .member-card strong {
@@ -210,6 +231,7 @@
         border-radius: 24px 24px 0 0;
     }
 
+    .tab-members,
     .company-tabs__left {
         gap: 30px;
     }
@@ -221,8 +243,28 @@
         line-height: 48px;
     }
 
+    .member-card .member_role p,
     .tab-description ul li, .tab-description p {
         font-size: 18px;
         line-height: 28px;
+    }
+
+    .tab-members,
+    .company-tabs__left {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+    }
+
+    .vertical-tabs__left {
+        width: calc(100% + 20px);
+    }
+
+    .vertical-tabs__nav li {
+        padding: 24px 12px;
+    }
+
+    .member-card img.image-no-name {
+        max-width: 100%;
+        max-height: 100%;
     }
 }

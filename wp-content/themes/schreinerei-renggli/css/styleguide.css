@@ -16,7 +16,7 @@
 @font-face {
    font-family: "Noto Sans", sans-serif;
   src: url("../fonts/NotoSans-Regular.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 300;;
   font-style: normal;
 }
 
@@ -51,7 +51,7 @@
 @font-face {
    font-family: "Noto Sans", sans-serif;
   src: url("../fonts/NotoSans-Italic.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 300;;
   font-style: italic;
 }
 
@@ -93,7 +93,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Sans", serif;
   font-weight: bold;
   color: #002047;
 }
@@ -103,14 +103,14 @@ h2 p,
 h3 p,
 h4 p,
 h5 p {
-  font-family: "Noto Serif", serif;
+  font-family: "Noto Sans", serif;
 }
 
 p {
   font-family: "Noto Sans", sans-serif;
   font-size: 17px;
   line-height: 23px;
-  font-weight: 400;
+  font-weight: 300;;
   margin: 0;
   color: #000000;
 }
@@ -204,7 +204,7 @@ a,
 a.link {
   font-size: 17px;
   line-height: 23px;
-  font-weight: 400;
+  font-weight: 300;;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }

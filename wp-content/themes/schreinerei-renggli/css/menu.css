@@ -18,7 +18,7 @@
   padding: 8px 16px;
   border-radius: 22px;
   transition: all 0.3s ease;
-  font-weight: 400;
+  font-weight: 300;;
   font-size: 17px;
   line-height: 23px;
   outline: 1px solid transparent;
@@ -38,7 +38,7 @@
   border-radius: 22px;
   color: #000000;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 300;;
   font-size: 17px;
   line-height: 23px;
   transition: all 0.3s ease;
@@ -101,11 +101,13 @@
     overflow: hidden;
     transition: max-height 0.4s ease, opacity 0.3s ease;
     opacity: 0;
+    visibility: hidden;
   }
 
   .main-navigation.open {
     max-height: 300px;
     opacity: 1;
+    visibility: visible;
   }
 
   .nav-button-mobile.active .nav-bar span:nth-child(1) {
