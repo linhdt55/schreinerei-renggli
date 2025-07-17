@@ -30,6 +30,43 @@ $footer_credits  = get_field('footer_credits_links', 'option');
           </div>
         <?php endforeach; ?>
       <?php endif; ?>
+      <?php
+      $footer_social_data = get_field('footer_social', 'option');
+
+      if (is_array($footer_social_data) && isset($footer_social_data[0])) :
+        $footer_social = $footer_social_data[0];
+        $title = $footer_social['social_title'] ?? '';
+        $items = $footer_social['social_items'] ?? [];
+      ?>
+
+        <div class="footer-social">
+          <?php if (!empty($title)): ?>
+            <h4 class="social-title"><?php echo esc_html($title); ?></h4>
+          <?php endif; ?>
+
+          <?php if (!empty($items)): ?>
+            <ul class="social-icons">
+              <?php foreach ($items as $item): ?>
+                <?php
+                $img = $item['image'] ?? null;
+                $link = $item['link'] ?? '';
+                ?>
+                <li>
+                  <?php if (!empty($link)): ?>
+                    <a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener">
+                      <?php if (!empty($img['url'])): ?>
+                        <img src="<?php echo esc_url($img['url']); ?>"
+                          alt="<?php echo esc_attr($img['alt'] ?? 'Social Icon'); ?>"
+                          width="30" height="30">
+                      <?php endif; ?>
+                    </a>
+                  <?php endif; ?>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
+        </div>
+      <?php endif; ?>
     </div>
 
     <!-- Partner Logos -->

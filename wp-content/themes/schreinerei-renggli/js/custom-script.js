@@ -1,25 +1,22 @@
 jQuery(document).ready(function ($) {
     const $swiperImage = $('.swiper-image');
-    const $swiperContent = $('.swiper-content');
 
-    if ($swiperImage.length && $swiperContent.length) {
+    if ($swiperImage.length) {
         const swiperImage = new Swiper('.swiper-image', {
             loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-            }
+            },
         });
-
-        const swiperContent = new Swiper('.swiper-content', {
-            loop: true,
-        });
-
-        swiperImage.controller.control = swiperContent;
-        swiperContent.controller.control = swiperImage;
     } else {
-        console.warn('Swiper containers not found');
+        console.warn('Swiper image container not found');
     }
+
 
     const tabHeaders = document.querySelectorAll('.vertical-tabs__nav li');
     const tabContents = document.querySelectorAll('.company-tabs__content');
@@ -64,21 +61,39 @@ jQuery(document).ready(function ($) {
 
     const hash = window.location.hash;
     if (hash && hash.startsWith("#tab_")) {
-      const tabId = hash.substring(1);
-      const tabButton = document.querySelector(`.vertical-tabs__nav li[data-tab="${tabId}"]`);
-      const tabContent = document.getElementById(tabId);
-  
-      if (tabButton && tabContent) {
-        document.querySelectorAll('.vertical-tabs__nav li').forEach(el => el.classList.remove('active'));
-        document.querySelectorAll('.company-tabs__content').forEach(el => el.classList.remove('active'));
-  
-        tabButton.classList.add('active');
-        tabContent.classList.add('active');
-        tabContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  
-        if (history.replaceState) {
-          history.replaceState(null, null, window.location.pathname);
+        const tabId = hash.substring(1);
+        const tabButton = document.querySelector(`.vertical-tabs__nav li[data-tab="${tabId}"]`);
+        const tabContent = document.getElementById(tabId);
+
+        if (tabButton && tabContent) {
+            document.querySelectorAll('.vertical-tabs__nav li').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.company-tabs__content').forEach(el => el.classList.remove('active'));
+
+            tabButton.classList.add('active');
+            tabContent.classList.add('active');
+            tabContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            if (history.replaceState) {
+                history.replaceState(null, null, window.location.pathname);
+            }
         }
-      }
     }
+
+    document.querySelectorAll('.member-card').forEach(card => {
+        const detail = card.querySelector('.member-info-detail');
+
+        if (!detail) return;
+
+        detail.style.height = '0px';
+        detail.style.overflow = 'hidden';
+        detail.style.transition = 'height 0.4s ease';
+
+        card.addEventListener('mouseenter', () => {
+            detail.style.height = detail.scrollHeight + 'px';
+        });
+
+        card.addEventListener('mouseleave', () => {
+            detail.style.height = '0px';
+        });
+    });
 });

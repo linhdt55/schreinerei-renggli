@@ -1,9 +1,14 @@
 /* ========================
    Slide Style
 =========================== */
+.slide-title-section,
 .page_slideshows_container {
     background-image: url("../assets/background-header.png");
     background-repeat: repeat;
+}
+
+.slide-title-section {
+    padding-top: 30px;
     padding-bottom: 75px;
 }
 
@@ -25,8 +30,7 @@
     object-fit: cover;
 }
 
-.slide-content {
-    margin-top: 30px;
+.slide-title-box {
     max-width: 1072px;
     padding-left: 141px;
 }
@@ -65,7 +69,7 @@
 }
 
 @media screen and (max-width: 1180px) {
-    .slide-content {
+    .slide-title-box {
         padding-left: 0;
     }
 }

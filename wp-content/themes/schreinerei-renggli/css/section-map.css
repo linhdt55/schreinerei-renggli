@@ -165,13 +165,15 @@
     cursor: pointer;
     line-height: 23px;
     font-weight: 300;;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     margin: 52px auto 0;
     width: 116px;
+    color: #000;
 }
 
 .wpcf7 input[type="submit"]:hover {
-    background-color: #FFE346;
+    background-color: #fff;
+    border-color: #000;
 }
 
 .wpcf7-not-valid-tip {

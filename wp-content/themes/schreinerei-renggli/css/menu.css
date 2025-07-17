@@ -45,8 +45,8 @@
 }
 
 .header-action-button a.btn:hover {
-  border-color: #013473;
-  color: #013473;
+  background-color: #FFE346;
+  border-color: #fff;
 }
 
 .nav-bar {

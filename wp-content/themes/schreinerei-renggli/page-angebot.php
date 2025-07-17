@@ -96,20 +96,27 @@ get_header();
                                     <?php
                                     $has_name = !empty($member['name']);
                                     $has_role = !empty($member['role']);
-                                    $image_class = (!$has_name && !$has_role) ? 'image-no-name' : '';
+                                    $has_info = !empty($member['info']);
+                                    $image_class = (!$has_name && !$has_role && !$has_info) ? 'image-no-name' : '';
                                     ?>
                                     <?php if (!empty($member['image'])): ?>
-                                        <img
-                                            src="<?php echo esc_url($member['image']['url']); ?>"
-                                            alt="<?php echo esc_attr($member['image']['alt']); ?>"
-                                            class="<?php echo esc_attr($image_class); ?>">
+                                        <div class="member-image-wrapper">
+                                            <img
+                                                src="<?php echo esc_url($member['image']['url']); ?>"
+                                                alt="<?php echo esc_attr($member['image']['alt']); ?>">
+                                        </div>
                                     <?php endif; ?>
 
-                                    <?php if ($has_name): ?>
+                                    <?php if ($has_name || $has_role || $has_info): ?>
                                         <div class="member-info">
-                                            <strong><?php echo ($member['name']); ?></strong>
+                                            <?php if ($has_name): ?>
+                                                <strong><?php echo esc_html($member['name']); ?></strong>
+                                            <?php endif; ?>
                                             <?php if ($has_role): ?>
-                                                <div class="member_role"><?php echo $member['role']; ?></div>
+                                                <div class="member_role"><?php echo wp_kses_post($member['role']); ?></div>
+                                            <?php endif; ?>
+                                            <?php if ($has_info): ?>
+                                                <div class="member-info-detail"><?php echo wp_kses_post($member['info']); ?></div>
                                             <?php endif; ?>
                                         </div>
                                     <?php endif; ?>
@@ -117,6 +124,7 @@ get_header();
                             <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
+
                 </div>
             <?php
                 $tab_contents[] = ob_get_clean();
@@ -131,6 +139,7 @@ get_header();
                 $email_address   = $row['email_address'];
                 $opening_hours   = $row['opening_hours'];
                 $map_image       = $row['map_image'];
+                $url_map       = $row['url_map'];
                 ?>
 
                 <section class="section-maps">
@@ -165,9 +174,23 @@ get_header();
                                 <?php endif; ?>
                             </div>
 
+                            <?php
+                            $map_image = $row['map_image'] ?? null;
+                            $url_map = $row['url_map'] ?? null;
+                            ?>
+
                             <?php if (!empty($map_image)): ?>
                                 <div class="map-image">
-                                    <img src="<?php echo esc_url($map_image['url']); ?>" alt="<?php echo esc_attr($map_image['alt']); ?>">
+                                    <?php if (!empty($url_map) && isset($url_map['url'])): ?>
+                                        <a href="<?php echo esc_url($url_map['url']); ?>"
+                                            target="<?php echo esc_attr($url_map['target'] ?? '_self'); ?>">
+                                            <img src="<?php echo esc_url($map_image['url']); ?>"
+                                                alt="<?php echo esc_attr($map_image['alt']); ?>">
+                                        </a>
+                                    <?php else: ?>
+                                        <img src="<?php echo esc_url($map_image['url']); ?>"
+                                            alt="<?php echo esc_attr($map_image['alt']); ?>">
+                                    <?php endif; ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -207,6 +230,20 @@ get_header();
             </div>
         </div>
     <?php endif; ?>
+
+    <?php
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+    ?>
+            <section class="section-content">
+                <div class="container">
+                    <?php the_content(); ?>
+                </div>
+            </section>
+    <?php
+        endwhile;
+    endif;
+    ?>
 </main>
 
 <?php get_footer(); ?>
